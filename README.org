@@ -1,0 +1,46 @@
+* nano-theme.el
+
+This is an emacs theme spilt from [[https://github.com/rougier/nano-emacs][nano-emacs]].
+
+This theme still work in progress, and feedbacks or pr are welcome!
+
+* Installation
+
+
+Put =nano-theme.el= in you =custom-theme-load-path=, or use [[https://github.com/raxod502/straight.el][straight.el.]]
+
+#+begin_src emacs-lisp
+  (straight-use-package '(nano-theme :type git :host github :repo "404cn/nano-theme.el"))
+#+end_src
+
+Then ~(load-theme 'nano t)~.
+
+The default theme is light, set =nano-theme-light/dark= to ='dark= before load theme if
+
+you want to use dark theme.
+
+* Customizations
+
+The theme has some options that can be tweaked vai ~M-x customize~:
+
+=nano-theme-light/dark=
+
+Use light or dark theme, defalut is ='light=.
+
+=nano-theme-comment-italic=
+
+This toggles italics for comment.
+
+=nano-theme-keyword-italic=
+
+This toggles italics for keyword.
+
+* Screenshot
+
+** light
+
+[[./img/light.png]]
+
+** dark
+
+[[./img/dark.png]]
