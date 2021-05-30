@@ -15,7 +15,11 @@ Put =nano-theme.el= in your =custom-theme-load-path=, or use [[https://github.co
 
 Then ~(load-theme 'nano t)~.
 
-The default theme is light, set =nano-theme-light/dark= to ~'dark~ before load theme if you want to use dark theme.
+The default theme is light, add this to your config before load theme if you want to use dark theme.
+
+#+begin_src emacs-lisp
+  (setq nano-theme-light/dark 'dark)
+#+end_src
 
 * Customizations
 
@@ -23,7 +27,7 @@ The theme has some options that can be tweaked vai ~M-x customize~:
 
 =nano-theme-light/dark=
 
-Use light or dark theme, defalut is ~'light~.
+Use light or dark theme.
 
 =nano-theme-comment-italic=
 
