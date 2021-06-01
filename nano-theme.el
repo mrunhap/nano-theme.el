@@ -135,7 +135,7 @@
    `(speedbar-directory-face              ((t (:foreground ,foreground :bold t))))
    `(speedbar-file-face                   ((t (:foreground ,foreground :background ,background))))
    `(speedbar-highlight-face              ((t (:foreground ,highlight))))
-   `(speedbar-selected-face               ((t (:background ,subtle))))
+   `(speedbar-selected-face               ((t (:background ,subtle :bold t))))
    `(speedbar-separator-face              ((t (:foreground ,faded))))
    `(speedbar-tag-face                    ((t (:foreground ,faded))))
 
