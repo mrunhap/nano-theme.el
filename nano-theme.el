@@ -442,12 +442,10 @@
    ;; Mode Line
    `(mode-line                            ((t (:background ,highlight))))
    `(mode-line-inactive                   ((t (:background ,subtle))))
-   `(header-line                          ((t (:background ,highlight))))
-   `(header-line-inactive                 ((t (:background ,subtle))))
+   `(header-line                          ((t (:background ,subtle))))
 
    ;; Solaire Mode
    `(solaire-default-face                 ((t (:inherit default :background ,highlight))))
-   `(solaire-minibuffer-face              ((t (:inherit default :background ,highlight))))
 
    ;; Orderless
    `(orderless-match-face-0               ((t (:foreground ,popout :bold t))))
