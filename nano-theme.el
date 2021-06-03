@@ -453,8 +453,18 @@
    `(orderless-match-face-2               ((t (:foreground ,popout :bold t))))
    `(orderless-match-face-3               ((t (:foreground ,popout :bold t))))
 
-   ;;Eshell
+   ;; Eshell
    `(eshell-prompt                        ((t (:foreground ,popout :bold t))))
+
+   ;; Imenu-ist
+   `(imenu-list-entry-subalist-face-0     ((t (:foreground ,strong :weight bold :underline t))))
+   `(imenu-list-entry-subalist-face-1     ((t (:foreground ,salient :weight bold :underline t))))
+   `(imenu-list-entry-subalist-face-2     ((t (:foreground ,popout :weight bold :underline t))))
+   `(imenu-list-entry-subalist-face-3     ((t (:foreground ,critical :weight bold :underline t))))
+   `(imenu-list-entry-face-0              ((t (:foreground ,strong))))
+   `(imenu-list-entry-face-1              ((t (:foreground ,salient))))
+   `(imenu-list-entry-face-2              ((t (:foreground ,popout))))
+   `(imenu-list-entry-face-3              ((t (:foreground ,critical))))
 
    ;; Meow
    `(meow-keypad-indicator                ((t (:foreground ,background :background ,salient))))
