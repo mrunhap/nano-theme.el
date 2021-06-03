@@ -243,9 +243,9 @@
 
    ;; Org
    `(org-archived                         ((t (:foreground ,faded))))
-   `(org-block                            ((t (:background ,subtle))))
-   `(org-block-begin-line                 ((t (:foreground ,faded))))
-   `(org-block-end-line                   ((t (:foreground ,faded))))
+   `(org-block                            ((t ())))
+   `(org-block-begin-line                 ((t (:background ,subtle :foreground ,faded :extend t))))
+   `(org-block-end-line                   ((t (:background ,subtle :foreground ,faded :extend t))))
    `(org-checkbox                         ((t (:foreground ,faded))))
    `(org-checkbox-statistics-done         ((t (:foreground ,faded))))
    `(org-checkbox-statistics-todo         ((t (:foreground ,faded))))
