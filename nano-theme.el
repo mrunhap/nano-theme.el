@@ -114,7 +114,7 @@
    `(font-lock-warning-face               ((t (:foreground ,popout :weight bold))))
 
    ;; Eldoc
-   `(eldoc-highlight-function-argument    ((t (:foreground ,critical :bold t))))
+   `(eldoc-highlight-function-argument    ((t (:foreground ,strong :bold t))))
 
    ;; ISearch
    `(isearch                              ((t (:foreground ,strong))))
