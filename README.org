@@ -37,6 +37,18 @@ This toggles italics for comment.
 
 This toggles italics for keyword.
 
+=nano-theme-modeline-box=
+
+Enable modeline box, default value is t.
+
+=nano-theme-meow-box=
+
+If it's value is t, disable meow-indicator foreground and background color and enable box.
+
+Default value is t.
+
+If you use meow and header line, it is recommend to set this to nil.
+
 * Screenshot
 
 ** light
