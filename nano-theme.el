@@ -397,6 +397,12 @@
    `(markdown-table-face                  ((t (:inhert default))))
    `(markdown-url-face                    ((t (:foreground ,salient))))
 
+   ;; Notmuch TODO
+   `(notmuch-tag-face                     ((t (:foreground ,faded))))
+   `(notmuch-tag-unread                   ((t (:foreground ,faded))))
+   `(notmuch-search-date                  ((t (:foreground ,faded))))
+   `(notmuch-tag-deleted                  ((t (:strike-through ,critical))))
+
    ;; Mu4e
    `(mu4e-attach-number-face              ((t (:foreground ,foreground :bold t))))
    `(mu4e-cited-1-face                    ((t (:foreground ,faded))))
