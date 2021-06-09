@@ -21,6 +21,12 @@ The default theme is light, add this to your config before load theme if you wan
   (setq nano-theme-light/dark 'dark)
 #+end_src
 
+* Use system appearence
+
+Set =nano-theme-system-appearance= to =t= to make nano theme related
+
+to system appearance, it's only available on macOS.
+
 * Customizations
 
 The theme has some options that can be tweaked vai ~M-x customize~:

@@ -65,11 +65,19 @@
   :type 'boolean
   :group 'nano-theme)
 
+(defcustom nano-theme-system-appearance t
+  "Related the system appearance. Only available on macOS."
+  :type 'boolean
+  :group 'nano-theme)
+
 (defun nano-theme--light?dark (light dark)
   "Determine using the LIGHT or the DARK color of nano-theme."
-  (if (eq nano-theme-light/dark 'light)
-      light
-    dark))
+  (if (and (featurep 'ns) nano-theme-system-appearance)
+      (cond ((eq ns-system-appearance 'light) light)
+            ((eq ns-system-appearance 'dark) dark))
+    (if (eq nano-theme-light/dark 'light)
+        light
+      dark)))
 (defalias '--l?d #'nano-theme--light?dark)
 
 (let ((foreground (--l?d "#37474F" "#ECEFF4"))
@@ -398,10 +406,13 @@
    `(markdown-url-face                    ((t (:foreground ,salient))))
 
    ;; Notmuch TODO
+   ;; TODO add color to tag and author
+   ;; TODO add color of notmuch-tree
    `(notmuch-tag-face                     ((t (:foreground ,faded))))
    `(notmuch-tag-unread                   ((t (:foreground ,faded))))
    `(notmuch-search-date                  ((t (:foreground ,faded))))
-   `(notmuch-tag-deleted                  ((t (:strike-through ,critical))))
+   `(notmuch-tag-deleted                  ((t (:strike-through ,popout))))
+   `(notmuch-tag-added                    ((t (:underline ,popout))))
 
    ;; Mu4e
    `(mu4e-attach-number-face              ((t (:foreground ,foreground :bold t))))
