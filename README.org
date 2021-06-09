@@ -23,9 +23,18 @@ The default theme is light, add this to your config before load theme if you wan
 
 * Use system appearence
 
-Set =nano-theme-system-appearance= to =t= to make nano theme related
+Set =nano-theme-system-appearance= to =t= to make nano theme related to system appearance, it's only available on macOS.
 
-to system appearance, it's only available on macOS.
+You can also add this to your =init.el= to auto change light or dark theme after system appearance changed.
+
+#+begin_src emacs-lisp
+  (when (featurep 'ns)
+    (add-to-list 'ns-system-appearance-change-functions
+                 (lambda (l?d)
+                   (setq nano-theme-light/dark 'l?d)
+                   (mapc #'disable-theme custom-enabled-themes)
+                   (load-theme 'nano t))))
+#+end_src
 
 * Customizations
 
