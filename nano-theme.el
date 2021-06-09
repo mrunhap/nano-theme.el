@@ -65,7 +65,7 @@
   :type 'boolean
   :group 'nano-theme)
 
-(defcustom nano-theme-system-appearance t
+(defcustom nano-theme-system-appearance nil
   "Related the system appearance. Only available on macOS."
   :type 'boolean
   :group 'nano-theme)
