@@ -55,24 +55,19 @@
   :type 'boolean
   :group 'nano-theme)
 
-(defcustom nano-theme-modeline-box t
-  "Add box to modeline"
-  :type 'boolean
-  :group 'nano-theme)
-
-(defcustom nano-theme-meow-box t
-  "Add box to meow indicator"
-  :type 'boolean
-  :group 'nano-theme)
-
 (defcustom nano-theme-system-appearance nil
   "Related the system appearance. Only available on macOS."
   :type 'boolean
   :group 'nano-theme)
 
+(defcustom nano-theme-padded-modeline 4
+  "If non-nil, add a 4px padding to the mode-line. Can be an integer to determine the exact padding"
+  :type '(choice integer boolean)
+  :group 'nano-theme)
+
 (defun nano-theme--light?dark (light dark)
   "Determine using the LIGHT or the DARK color of nano-theme."
-  (if (and (featurep 'ns) nano-theme-system-appearance)
+  (if (and (boundp 'ns-system-appearance) nano-theme-system-appearance)
       (cond ((eq ns-system-appearance 'light) light)
             ((eq ns-system-appearance 'dark) dark))
     (if (eq nano-theme-light/dark 'light)
@@ -88,7 +83,10 @@
       (strong     (--l?d "#000000" "#ECEFF4"))
       (popout     (--l?d "#FFAB91" "#D08770"))
       (subtle     (--l?d "#ECEFF1" "#434C5E"))
-      (faded      (--l?d "#B0BEC5" "#677691")))
+      (faded      (--l?d "#B0BEC5" "#677691"))
+      (-modeline-pad
+       (when nano-theme-padded-modeline
+         (if (integerp nano-theme-padded-modeline) nano-theme-padded-modeline 4))))
   (custom-theme-set-faces
    `nano
    ;; Basic
@@ -158,6 +156,7 @@
    `(speedbar-tag-face                    ((t (:foreground ,faded))))
 
    ;; Bookmark
+   `(bookmark-face                        ((t (:foreground ,popout :box t))))
    `(bookmark-menu-heading                ((t (:foreground ,foreground :bold t))))
    `(bookmark-menu-bookmark               ((t (:foreground ,salient))))
 
@@ -467,8 +466,8 @@
    `(calendar-today                       ((t (:foreground ,foreground :bold t))))
 
    ;; Mode Line
-   `(mode-line                            ((t (:background ,highlight :box ,(if nano-theme-modeline-box t)))))
-   `(mode-line-inactive                   ((t (:background ,subtle :box ,(if nano-theme-modeline-box t)))))
+   `(mode-line                            ((t (:background ,highlight :box ,(if -modeline-pad `(:line-width ,-modeline-pad :color ,highlight))))))
+   `(mode-line-inactive                   ((t (:background ,subtle :box ,(if -modeline-pad `(:line-width ,-modeline-pad :color ,subtle))))))
    `(header-line                          ((t (:background ,subtle))))
 
    ;; Solaire Mode
@@ -491,13 +490,7 @@
    `(imenu-list-entry-face-0              ((t (:foreground ,strong))))
    `(imenu-list-entry-face-1              ((t (:foreground ,salient))))
    `(imenu-list-entry-face-2              ((t (:foreground ,popout))))
-   `(imenu-list-entry-face-3              ((t (:foreground ,critical))))
-
-   ;; Meow
-   `(meow-keypad-indicator                ((t (:foreground ,(if (not nano-theme-meow-box) background) :background ,(if (not nano-theme-meow-box) salient) :box ,(if nano-theme-meow-box t)))))
-   `(meow-insert-indicator                ((t (:foreground ,(if (not nano-theme-meow-box) background) :background ,(if (not nano-theme-meow-box) critical) :box ,(if nano-theme-meow-box t)))))
-   `(meow-normal-indicator                ((t (:foreground ,(if (not nano-theme-meow-box) background) :background ,(if (not nano-theme-meow-box) faded) :box ,(if nano-theme-meow-box t)))))
-   `(meow-motion-indicator                ((t (:foreground ,(if (not nano-theme-meow-box) background) :background ,(if (not nano-theme-meow-box) popout) :box ,(if nano-theme-meow-box t)))))))
+   `(imenu-list-entry-face-3              ((t (:foreground ,critical))))))
 
 ;;;###autoload
 (and load-file-name

@@ -28,10 +28,10 @@ Set =nano-theme-system-appearance= to =t= to make nano theme related to system a
 You can also add this to your =init.el= to auto change light or dark theme after system appearance changed.
 
 #+begin_src emacs-lisp
-  (when (featurep 'ns)
+  (when (boundp 'ns-system-appearance)
     (add-to-list 'ns-system-appearance-change-functions
                  (lambda (l?d)
-                   (setq nano-theme-light/dark 'l?d)
+                   (setq nano-theme-light/dark l?d)
                    (mapc #'disable-theme custom-enabled-themes)
                    (load-theme 'nano t))))
 #+end_src
@@ -52,17 +52,9 @@ This toggles italics for comment.
 
 This toggles italics for keyword.
 
-=nano-theme-modeline-box=
+=nano-theme-padded-modeline=
 
-Enable modeline box, default value is t.
-
-=nano-theme-meow-box=
-
-If it's value is t, disable meow-indicator foreground and background color and enable box.
-
-Default value is t.
-
-If you use meow and header line, it is recommend to set this to nil.
+If non-nil, add a 4px padding to the mode-line. Can be an integer to determine the exact padding, default is 4.
 
 * Screenshot
 
