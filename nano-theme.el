@@ -65,6 +65,11 @@
   :type '(choice integer boolean)
   :group 'nano-theme)
 
+(defcustom nano-theme-overline-modeline nil
+  "If non-nil, set mode-line background to default background and add overline"
+  :type '(boolean)
+  :group 'nano-theme)
+
 (defun nano-theme--light?dark (light dark)
   "Determine using the LIGHT or the DARK color of nano-theme."
   (if (and (boundp 'ns-system-appearance) nano-theme-system-appearance)
@@ -220,8 +225,8 @@
    `(package-status-new                   ((t (:foreground ,foreground :background ,background))))
 
    ;; Flyspell
-   `(flyspell-duplicate                   ((t (:foreground ,popout))))
-   `(flyspell-incorrect                   ((t (:foreground ,popout))))
+   `(flyspell-duplicate                   ((t (:underline ,critical))))
+   `(flyspell-incorrect                   ((t (:underline ,critical))))
 
    ;; Ido
    `(ido-first-match                      ((t (:foreground ,salient))))
@@ -260,9 +265,9 @@
 
    ;; Org
    `(org-archived                         ((t (:foreground ,faded))))
-   `(org-block                            ((t ())))
-   `(org-block-begin-line                 ((t (:background ,subtle :foreground ,faded :extend t))))
-   `(org-block-end-line                   ((t (:background ,subtle :foreground ,faded :extend t))))
+   `(org-block                            ((t (:background ,highlight))))
+   `(org-block-begin-line                 ((t (:foreground ,faded))))
+   `(org-block-end-line                   ((t (:foreground ,faded))))
    `(org-checkbox                         ((t (:foreground ,faded))))
    `(org-checkbox-statistics-done         ((t (:foreground ,faded))))
    `(org-checkbox-statistics-todo         ((t (:foreground ,faded))))
@@ -466,11 +471,17 @@
    `(calendar-today                       ((t (:foreground ,foreground :bold t))))
 
    ;; Mode Line
-   `(mode-line                            ((t (:background ,highlight :box ,(if -modeline-pad `(:line-width ,-modeline-pad :color ,highlight))))))
-   `(mode-line-inactive                   ((t (:background ,subtle :box ,(if -modeline-pad `(:line-width ,-modeline-pad :color ,subtle))))))
+   `(mode-line                            ((t (:background ,(if nano-theme-overline-modeline background foreground)
+                                                           :foreground ,(if nano-theme-overline-modeline nil background)
+                                                           :overline ,(if nano-theme-overline-modeline strong nil)
+                                                           :box ,(if -modeline-pad `(:line-width ,-modeline-pad :color ,foreground))))))
+   `(mode-line-inactive                   ((t (:background ,(if nano-theme-overline-modeline background faded)
+                                                           :foreground ,(if nano-theme-overline-modeline nil background)
+                                                           :overline ,(if nano-theme-overline-modeline subtle nil)
+                                                           :box ,(if -modeline-pad `(:line-width ,-modeline-pad :color ,faded))))))
    `(header-line                          ((t (:background ,subtle))))
 
-   ;; Solaire Mode
+   ;; solaire Mode
    `(solaire-default-face                 ((t (:inherit default :background ,highlight))))
 
    ;; Orderless

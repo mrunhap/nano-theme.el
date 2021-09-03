@@ -2,10 +2,7 @@
 
 This is an emacs theme spilt from [[https://github.com/rougier/nano-emacs][nano-emacs]].
 
-This theme still work in progress, any feedbacks or pr are welcome!
-
 * Installation
-
 
 Put =nano-theme.el= in your =custom-theme-load-path=, or use [[https://github.com/raxod502/straight.el][straight.el]].
 
@@ -56,12 +53,16 @@ This toggles italics for keyword.
 
 If non-nil, add a 4px padding to the mode-line. Can be an integer to determine the exact padding, default is 4.
 
+=nano-theme-overline-modeline=
+
+If non-nil, set mode-line background to default background and add overline, default is nil. (If you perfer overline, set =nano-theme-padded-modeline= to =nil=)
+
 * Screenshot
 
 ** light
 
-[[./img/light.png]]
+[[./img/light]]
 
 ** dark
 
-[[./img/dark.png]]
+[[./img/dark]]
