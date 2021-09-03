@@ -61,8 +61,8 @@ If non-nil, set mode-line background to default background and add overline, def
 
 ** light
 
-[[./img/light]]
+[[./img/light.png]]
 
 ** dark
 
-[[./img/dark]]
+[[./img/dark.png]]
