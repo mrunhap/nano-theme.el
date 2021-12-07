@@ -40,7 +40,7 @@
   "Options of nano theme."
   :group 'faces)
 
-(defcustom nano-theme-header-scales '(1.6 1.4 1.2 1.0 1.0 1.0 1.0)
+(defcustom nano-theme-header-scales '(1.3 1.2 1.1 1.0 1.0 1.0 1.0)
   "Scales for headers."
   :group 'nano-theme)
 
