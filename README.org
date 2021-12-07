@@ -20,9 +20,7 @@ The default theme is light, add this to your config before load theme if you wan
 
 * Use system appearence
 
-Set =nano-theme-system-appearance= to =t= to make nano theme related to system appearance, it's only available on macOS.
-
-You can also add this to your =init.el= to auto change light or dark theme after system appearance changed.
+Add this to your =init.el= to auto change light or dark theme after system appearance changed.
 
 #+begin_src emacs-lisp
   (when (boundp 'ns-system-appearance)
@@ -33,36 +31,6 @@ You can also add this to your =init.el= to auto change light or dark theme after
                    (load-theme 'nano t))))
 #+end_src
 
-* Customizations
-
-The theme has some options that can be tweaked vai ~M-x customize~:
-
-=nano-theme-light/dark=
-
-Use light or dark theme.
-
-=nano-theme-comment-italic=
-
-This toggles italics for comment.
-
-=nano-theme-keyword-italic=
-
-This toggles italics for keyword.
-
-=nano-theme-padded-modeline=
-
-If non-nil, add a 4px padding to the mode-line. Can be an integer to determine the exact padding, default is 4.
-
-=nano-theme-overline-modeline=
-
-If non-nil, set mode-line background to default background and add overline, default is nil. (If you perfer overline, set =nano-theme-padded-modeline= to =nil=)
-
 * Screenshot
 
-** light
-
 [[./img/light.png]]
-
-** dark
-
-[[./img/dark.png]]
