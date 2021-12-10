@@ -395,6 +395,13 @@
    `(mode-line-inactive ((t ( :background ,background :foreground ,faded :overline ,subtle
                               :box ,(if -modeline-pad `(:line-width ,-modeline-pad :color ,faded))))))
 
+   ;; tab-bar
+   `(tab-bar                    ((t (:background ,subtle))))
+   `(tab-bar-tab-group-current  ((t ())))
+   `(tab-bar-tab                ((t (:inverse-video t :bold t))))
+   `(tab-bar-tab-group-inactive ((t ())))
+   `(tab-bar-tab-inactive       ((t (:inherit shadow))))
+
    ;; solaire Mode
    `(solaire-default-face             ((t (:inherit default :background ,highlight))))
 
