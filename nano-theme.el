@@ -390,10 +390,8 @@
    `(calendar-today ((t (:foreground ,foreground :bold t))))
 
    ;; Mode Line
-   `(mode-line          ((t ( :background ,background :overline ,strong
-                              :box ,(if -modeline-pad `(:line-width ,-modeline-pad :color ,foreground))))))
-   `(mode-line-inactive ((t ( :background ,background :foreground ,faded :overline ,subtle
-                              :box ,(if -modeline-pad `(:line-width ,-modeline-pad :color ,faded))))))
+   `(mode-line          ((t ( :background ,foreground :foreground ,background))))
+   `(mode-line-inactive ((t ( :background ,faded :foreground ,background))))
 
    ;; tab-bar
    `(tab-bar                    ((t (:background ,subtle))))
