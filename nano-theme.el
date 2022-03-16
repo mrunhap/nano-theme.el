@@ -70,10 +70,10 @@
       (highlight  (--l?d "#FAFAFA" "#3B4252"))
       (critical   (--l?d "#FF6F00" "#EBCB8B"))
       (salient    (--l?d "#673AB7" "#81A1C1"))
-      (strong     (--l?d "#000000" "#ECEFF4"))
+      (strong     (--l?d "#263238" "#FFFFFF"))
       (popout     (--l?d "#FFAB91" "#D08770"))
       (subtle     (--l?d "#ECEFF1" "#434C5E"))
-      (faded      (--l?d "#B0BEC5" "#677691")))
+      (faded      (--l?d "#90A4AE" "#677691")))
   (custom-theme-set-faces
    `nano
    ;; Basic
