@@ -123,8 +123,7 @@
    `(eldoc-highlight-function-argument ((t (:foreground ,strong :bold t))))
 
    ;; ISearch
-   `(isearch      ((t (:foreground ,strong))))
-   `(isearch-fail ((t (:foreground ,faded))))
+   `(isearch      ((t (:background ,subtle :box (:line-width (-1 . -1))))))
 
    ;; Info
    `(info-menu-header ((t (:foreground ,foreground :bold t))))
