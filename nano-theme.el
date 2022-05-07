@@ -417,6 +417,9 @@
    `(imenu-list-entry-face-2          ((t (:foreground ,popout))))
    `(imenu-list-entry-face-3          ((t (:foreground ,critical))))))
 
+(setq awesome-tray-mode-line-active-color "#37474F"
+      awesome-tray-mode-line-inactive-color "#90A4AE")
+
 ;;;###autoload
 (and load-file-name
      (boundp 'custom-theme-load-path)
