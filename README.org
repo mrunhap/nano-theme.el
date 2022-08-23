@@ -2,6 +2,8 @@
 
 This is an emacs theme spilt from [[https://github.com/rougier/nano-emacs][nano-emacs]].
 
+Since there an official [[https://github.com/rougier/nano-theme][nano-theme]], this will be changed more for my personal use.
+
 * Installation
 
 Put =nano-theme.el= in your =custom-theme-load-path=, or use [[https://github.com/raxod502/straight.el][straight.el]].
@@ -17,20 +19,3 @@ The default theme is light, add this to your config before load theme if you wan
 #+begin_src emacs-lisp
   (setq nano-theme-light/dark 'dark)
 #+end_src
-
-* Use system appearence
-
-Add this to your =init.el= to auto change light or dark theme after system appearance changed.
-
-#+begin_src emacs-lisp
-  (when (boundp 'ns-system-appearance)
-    (add-to-list 'ns-system-appearance-change-functions
-                 (lambda (l?d)
-                   (setq nano-theme-light/dark l?d)
-                   (mapc #'disable-theme custom-enabled-themes)
-                   (load-theme 'nano t))))
-#+end_src
-
-* Screenshot
-
-[[./img/light.png]]
